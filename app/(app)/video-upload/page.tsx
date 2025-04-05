@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, use, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const VideoUpload = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -33,7 +33,7 @@ const VideoUpload = () => {
     formData.append("originalSize", file.size.toString());
 
     try {
-      const response = axios.post("/api/video-upload", formData);
+      const response = axios.post("/api/upload-video", formData);
 
       if ((await response).status === 200) {
         toast.success("File Uploaded Successfully");
@@ -51,7 +51,6 @@ const VideoUpload = () => {
 
   return (
     <div className='container mx-auto p-4'>
-      <ToastContainer />
       <h1 className='text-2xl font-bold mb-4'>Upload Video</h1>
       <form onSubmit={handleSubmit} className='space-y-4'>
         <div>
