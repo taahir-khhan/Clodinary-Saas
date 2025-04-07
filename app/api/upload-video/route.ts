@@ -43,9 +43,9 @@ export async function POST(request: NextRequest) {
     // Extract file from the frontend
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
-    const title = formData.get("title") as String;
-    const description = formData.get("description") as String;
-    const originalSize = formData.get("originalSize") as String;
+    const title = formData.get("title") as string;
+    const description = formData.get("description") as string;
+    const originalSize = formData.get("originalSize") as string;
 
     if (!file) {
       return NextResponse.json({ error: "File not found" }, { status: 400 });

@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { FormEvent, use, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 
 const VideoUpload = () => {

@@ -2,8 +2,9 @@ import { Video } from "@/types";
 import dayjs from "dayjs";
 import realtiveTime from "dayjs/plugin/relativeTime";
 import { filesize } from "filesize";
-import { Clock, Download, FileDown, FileUp, VideoOff } from "lucide-react";
+import { Clock, Download, FileDown, FileUp } from "lucide-react";
 import { getCldImageUrl, getCldVideoUrl } from "next-cloudinary";
+import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 
 dayjs.extend(realtiveTime);
@@ -92,7 +93,7 @@ const VideoCard: React.FC<VideoCardProp> = ({ video, onDownload }) => {
             />
           )
         ) : (
-          <img
+          <Image
             src={getThumbnailUrl(video.publicId)}
             alt={video.title}
             className='w-full h-full object-cover'

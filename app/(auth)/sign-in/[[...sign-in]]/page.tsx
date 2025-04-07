@@ -11,7 +11,7 @@ export default function Page() {
         className='text-white underline font-bold cursor-pointer'
         onClick={() => router.push("/sign-up")}
       >
-        Don't have an account, register here
+        Don&apos;t have an account, register here
       </p>
     </div>
   );
